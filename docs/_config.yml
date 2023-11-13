@@ -29,7 +29,7 @@ github_username: DaraDadachanji
 
 # Build settings
 theme: minima
-markdown: kramdown
+markdown: GFM
 plugins:
   - jekyll-feed
 

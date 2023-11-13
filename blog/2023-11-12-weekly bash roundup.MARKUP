@@ -2,7 +2,6 @@
 layout: post
 title:  "Weekly bash roundup"
 date:   2023-11-12 08:30:00 -0800
-categories: bash regex terraform
 ---
 I wrote a few cool bash snippets last week while refactoring some terraform
 

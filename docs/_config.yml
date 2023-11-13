@@ -23,7 +23,7 @@ title: Explorer's Cove
 description: >-
   My personal blog where I write about neat stuff I learned
 baseurl: "/blog" 
-url: "https://daradadachanji.github.io/"
+url: "https://daradadachanji.github.io"
 #twitter_username: jekyllrb
 github_username: DaraDadachanji
 

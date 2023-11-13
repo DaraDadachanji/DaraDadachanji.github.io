@@ -16,7 +16,7 @@ they still had targets.
  aws events list-rules --query 'Rules[*].[Name]' --output text > allrules.txt
  grep catalog < allrules.txt >> rules.txt
  grep data_quality < allrules.txt >> rules.txt
- 
+
  xargs -I {} sh -c 'aws events remove-targets \
   --rule "$1" \
   --ids $(aws events list-targets-by-rule \
@@ -24,7 +24,6 @@ they still had targets.
       --query "Targets[*].Id" \
       --output text)' - {} < rules.txt
 {% endhighlight %}
-
 
 ## moving terraform state after renaming a module
 

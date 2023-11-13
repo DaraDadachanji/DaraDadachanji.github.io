@@ -37,13 +37,13 @@ it does not know that the destruction must occur *before* re-creation, and may e
 
 The solution is to move the state using `terraform state mv`
 
-We have existing state which looke like this:
+We have existing addresses in the state file which look like this:
 
-`module.main.[...].module.buckets["restricted"].snowflake_stage.this`
+module.main.[...].module.<span style="color:red">buckets</span>["restricted"].snowflake_stage.this
 
-and we need to move this state to the new address
+and we need to change them as such
 
-`module.main.[...].module.stages["restricted"].snowflake_stage.this`
+module.main.[...].module.<span style="color:green">stages</span>["restricted"].snowflake_stage.this
 
 ```bash
 terraform state list |
@@ -73,7 +73,7 @@ and begin constructing our terraform commands.
 `\047` prints a single quote `'`.
 We wrap each address in single quotes since the addresses contain double quotes
 
-### What if their are spaces in the terraform addresses?
+### What if there are spaces in the terraform addresses?
 
 Sometimes terraform addresses can have spaces in them.
 Usually as a result of `for_each` blocks. Let's say our addresses looked like this

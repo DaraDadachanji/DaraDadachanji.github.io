@@ -22,7 +22,7 @@ title: Explorer's Cove
 #email: your-email@example.com
 description: >-
   My personal blog where I write about neat stuff I learned
-baseurl: "/blog" 
+baseurl: "" 
 url: "https://daradadachanji.github.io/"
 #twitter_username: jekyllrb
 github_username: DaraDadachanji

@@ -47,13 +47,13 @@ module.main.[...].module.<span style="color:green">stages</span>["restricted"].s
 
 ```bash
 terraform state list |
-gorex '(\S*\.module\.)buckets(\S*)' |
+rex '(\S*\.module\.)buckets(\S*)' |
 awk '{print "terraform state mv \047" $1 "buckets" $2 "\047 \047" $1 "stages" $2 "\047"}' > move.sh
 
 sh move.sh
 ```
 
-gorex is a [command line utility I wrote](https://github.com/DaraDadachanji/gorex) to do regex extractions. Let's look at this one:
+rex is a [command line utility I wrote](https://github.com/DaraDadachanji/gorex) to perform regex extractions in the terminal. Let's look at this one:
 
 `(\S*\.module\.)buckets(\S*)`
 
@@ -84,9 +84,9 @@ How would we alter our script to account for this? Simple: we change the field s
 
 ```bash
 terraform state list |
-gorex -F ::: '(\S*\.module\.)buckets(\S*)' |
+rex -F ::: '(\S*\.module\.)buckets(\S*)' |
 awk -F ::: '{print "terraform state mv \047" $1 "buckets" $2 "\047 \047" $1 "stages" $2 "\047"}' > move.sh
 ```
 
-both `awk` and `gorex` can change the field separator used in their inputs and outputs (respectively)
+both `awk` and `rex` can change the field separator used in their inputs and outputs (respectively)
 using the `-F` flag.
